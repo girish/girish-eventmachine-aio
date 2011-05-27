@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "resize",
+    "iphone"
+  ],
+  "transitions": "fade",
+  "title": "AsyncIo - EventMachine",
+  "theme": "rain",
+  "slides": [
+    "welcome.html",
+    "thanks.html"
+  ]
+}
