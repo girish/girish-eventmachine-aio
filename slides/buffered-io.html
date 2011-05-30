@@ -1,0 +1,17 @@
+<p>As a side note: IO is buffered in kerenel for efficiency. Read/Write calls copies data from/to kernel buffer.</p>
+<pre>
+User Space                      Kernel Space
+----------                   |    ----------        ----------
+|         |  read(fd, size)  |    |        |        |        |
+|         |  &lt-------------  |    | kbuf   | &lt----- |        |
+|         |                  |    |        |        |        |
+|         |                  |    ----------        |        |
+| buffer  |                  |                      | device |
+|         |                  |    ----------        |        |
+|         |  -------------&gt  |    |        |        |        |
+|         | write(fd, size)  |    | kbuf   | -----&gt |        |
+|         |                  |    |        |        |        |
+-----------                  |    ----------        ----------
+</pre>
+
+<p>This means no guarantee that contents are written to disk every time you write, Yes true. Call excplicitly fsync to do so.</p>

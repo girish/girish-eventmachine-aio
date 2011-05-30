@@ -1,0 +1,12 @@
+<h3>IO Multiplexing(contd..)</h3> 
+<script type="syntaxhighlighter" class="brush: c"><![CDATA[
+  /*readfs, writefds are fd sets passed. FD_ZERO() clears a set. FD_SET() and
+  FD_CLR() respectively add and remove a given file descriptor from a set.
+  FD_ISSET() tests to see if a file descriptor is part of the set*/
+  
+  int select(int nfds, fd_set *readfds, fd_set *writefds, 
+  fd_set *exceptfds, struct timeval *timeout);
+  ]]></script>
+<p>After select/poll call kerenel loops through the fd array passed, to check the state changes and set a bit if occurred.</p>
+<p>When it returns, we have to loop through all the fds and check for set using FD_ISSET </p>
+<p>Inefficient for large no of fds.</p>

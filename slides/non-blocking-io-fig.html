@@ -1,0 +1,5 @@
+<p>Very inefficient as we have to poll, also a newly introduced latency due to delay between data available in kernel and read call we make. Cruical for network applications</p>
+<figure class="shadow">
+<img src="vendor/images/sync-nonblock.gif">
+</figure>
+<p>Disk IO always blocks ignore the flag(O_NONBLOCK). Only way to do Disk IO is blocking IO</p>

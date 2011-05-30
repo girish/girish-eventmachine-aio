@@ -48,12 +48,12 @@ body          {
 #stage        { display: block !important; margin: 0; padding: 0 2em; color: #fefeff; text-shadow: #000 2px 2px 4px }
 
 /* override centered */
-#stage h1, h2, h3 { text-align: left; margin: 0 }
+#stage h1, h2, h3, h4, h5 { text-align: left; margin: 0 }
 #stage p          { text-align: left; margin: 0 }
 p, li             { font-size: 1.8em }
 small             { font-size: 1.3em }
 
-h1, h2, h3, b, em { font-family: 'ExpresswayCondensedSemiBoldIt' }
+h1, h2, h3,h5,h4, b, em { font-family: 'ExpresswayCondensedSemiBoldIt' }
 
 ul, ol    { list-style-position: inside }
 ul        { list-style-type: disc }
@@ -61,3 +61,21 @@ ol        { list-style-type: decimal }
 .not      { text-decoration: line-through }
 a         { color: #CAB853; text-decoration: none; border-bottom: 1px dotted #CAB853 }
 em        { font-family: 'ExpresswayCondensedSemiBoldIt' }
+
+.syntaxhighlighter, .shadow {
+    -moz-box-shadow: 3px 3px 4px white;
+    -webkit-box-shadow: 5px 5px 5px white;
+    -webkit-border-radius: 6px;
+    width:521px;
+    padding:20px !important;
+    margin-left:auto;
+    text-align:center;
+    margin-right:auto;
+    box-shadow: 12px 12px 12px #111;
+    background-color:white;
+    color:black;
+}
+
+.textcenter {
+  text-align:center;
+}

@@ -1,0 +1,5 @@
+<h3>I/O Multiplexing</h3>
+<p>Instead of blocking on one fd this allows us to block on multiple fds and returns when any one of them is READY for I/O</p>
+<p>Each fd should be opened in Non Block(O_NONBLOCK) mode.</p>
+<p>File descriptor(generally wrapped in some struct) with additional information to monitor like interseted events/state-changes(readable/writable) are passed to select, poll or epoll.</p>
+<p>Kernel notifies when an event/state-changes occur ie when any of the fds are READY.</p>
