@@ -1,0 +1,12 @@
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+module FileSender
+   def post_init
+     streamer = EventMachine::FileStreamer.new(self, '/tmp/bigfile.tar')
+     # sends large file data in chunks thus distrubuting work across loops.
+     # when finished sending fires callback
+     streamer.callback{
+       # file was sent successfully
+     }
+   end
+end
+  ]]></script>

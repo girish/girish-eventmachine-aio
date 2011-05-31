@@ -1,0 +1,9 @@
+
+<h3>Blocking IO</h3>
+<p>An I/O operation that may itself cause
+the requesting thread of execution to be
+blocked from further use of the
+processor.
+</p>
+<p>That means, our process is put into sleep if such an operation occurs. Kernel wakes up when data is avialable.</p>
+<p>Eg:socket.accept(), socket.recv(), pipe.read() until any input is avialable for reading.</p>

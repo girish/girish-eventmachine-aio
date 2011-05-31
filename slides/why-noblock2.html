@@ -1,0 +1,14 @@
+<p>The problem..</p>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+
+EM.run  do
+  EM.add_timer(100) do
+    puts "finished after 10000 seconds"
+    EM.stop
+  end
+  1.upto(10000) do
+    sleep 1 # some processing
+  end
+end
+ ]]></script>
+

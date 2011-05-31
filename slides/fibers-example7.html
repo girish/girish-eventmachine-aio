@@ -1,0 +1,11 @@
+
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  f = Fiber.new{} # f contains new thread of execution.
+  f.resume # runs the code
+  f.resume # raises "FiberError: dead fiber called"
+  f = Fiber.new{ puts "I ran first time" ; Fiber.yield ; puts "ran after"}
+  f.resume # prints 'I ran first time'
+  f.resume # prints 'ran after'
+  f.resume # raises "FiberError: dead fiber called"
+  ]]></script>
+

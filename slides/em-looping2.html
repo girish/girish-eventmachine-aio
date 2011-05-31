@@ -1,0 +1,16 @@
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+    n = 0
+    tickloop = EM.tick_loop do
+      if n < 500
+        do_something
+        n += 1
+      else
+        #
+      end
+    end
+    # or 
+    EM::Iterator.new(0..10).each{ |num,iter| 
+      iter.next # call next_tick 
+    }
+ ]]></script>
+

@@ -1,0 +1,24 @@
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+
+module Handler
+
+  def post_init
+    puts "Starting TLS"
+    start_tls
+  end
+
+  def ssl_handshake_completed
+    puts get_peer_cert
+    close_connection
+  end
+
+  def unbind
+    EventMachine::stop_event_loop
+  end
+
+end
+
+EM.run {
+  EventMachine::connect "mail.google.com", 443, Handler
+}
+]]></script>

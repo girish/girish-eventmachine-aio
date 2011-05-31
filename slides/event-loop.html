@@ -1,0 +1,18 @@
+<h3>Event Loop</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  EM.run do
+    puts "running.."
+  end 
+  puts "I'm never seen"
+
+  :output
+  running..
+  running..
+  running..
+  running..
+  running..
+  running..
+    .
+    .
+    .
+]]></script>

@@ -1,0 +1,21 @@
+<h3>EM Http</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+EventMachine.run {
+  http = EventMachine::Protocols::HttpClient.request(
+    :host => server,
+    :port => 80,
+    :request => "/index.html",
+    :query_string => "parm1=value1&parm2=value2"
+  )
+  # We register callbacks to run when request finishes
+  http.callback {|response|
+    puts response[:status]
+    puts response[:headers]
+    puts response[:content]
+  }
+  http.errback {
+    puts "An error occured"
+  }
+}
+  ]]></script>
+

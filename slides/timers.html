@@ -1,0 +1,21 @@
+<h3>Timers</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  EM.run do
+    EM.add_timer(100) do # or EM::Timer.new(100)
+      puts "finished after 100 seconds"
+      EM.stop
+    end
+    
+    EM.add_periodic_timer(1) do # or EM::PerodicTimer.new(1)
+      puts "This will print every second"
+    end
+    
+    timer = EM::Timer.new(10) do
+      puts 'You will never see me'
+    end 
+    timer.cancel
+    
+    puts "This is printed first many times.."
+  end
+]]></script>
+

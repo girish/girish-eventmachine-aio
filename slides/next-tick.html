@@ -1,0 +1,11 @@
+<h3>Next Tick</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  EM.run do
+    EM.next_tick do
+      puts "I have to wait"
+      EM.stop
+    end
+    puts "This is printed first"
+  end
+  ]]></script>
+

@@ -1,0 +1,9 @@
+<h3>Blocking I/O</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  Em.run do
+    db = Mysql.new('localhost')
+    db.query("select sleep(1)")
+  end
+ ]]></script>
+
+<p>This breaks the rule.</p>

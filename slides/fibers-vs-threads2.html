@@ -1,0 +1,25 @@
+
+<h3>Fibers VS Threads</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+require 'thread'
+
+Thread.new do
+  loop { puts "thread" }
+end
+
+loop { puts "main" }
+
+# ruby thread_example.rb | grep main | wc -l will be > 0
+
+require 'fiber'
+
+Fiber.new do
+  loop { puts "fiber" }
+end.resume
+
+loop { puts "main"}
+
+# ruby fiber_example.rb | grep main | wc -l will be = 0
+  ]]></script>
+<p>Fibers are manually scheduled, but threads are scheduled by ruby VM</p>
+

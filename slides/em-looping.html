@@ -1,0 +1,13 @@
+<h3>The solution</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  n=0
+  iter = Proc.new {
+    if n < 3000
+      # process
+      n += 1
+      EM.next_tick(&iter)
+    end
+  }
+  EM.next_tick(&iter)
+ ]]></script>
+

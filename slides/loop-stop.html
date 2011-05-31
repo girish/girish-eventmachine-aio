@@ -1,0 +1,12 @@
+<h3>Stoping the Loop</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  EM.run do
+    puts "running.."
+    Em.stop
+  end
+  puts "I was here."
+
+  :output
+  running..
+  I was here
+]]></script>

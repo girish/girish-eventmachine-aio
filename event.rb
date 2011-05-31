@@ -22,13 +22,13 @@ EM.run do
   puts 1
 end
 
-#No-Loop
+# No-Loop
 EM.run  do
   EM.add_timer(100) do
     puts "finished after 10000 ms"
     EM.stop
   end
   1.upto(10000) do
-    # sleep 1
+    sleep 1 # some processing
   end
 end

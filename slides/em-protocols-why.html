@@ -1,0 +1,18 @@
+<h3>Another Example</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+   module LineReciever
+      def receive_data data # :nodoc:
+        (@buf ||= '') << data
+
+        while line = @buf.slice!(/(.*)\r?\n/)
+          receive_line(line)
+        end
+      end
+
+      # Invoked with lines received over the network
+      def receive_line(line)
+      end
+   end
+
+  ]]></script>
+
