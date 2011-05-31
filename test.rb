@@ -1,13 +1,3 @@
-require 'eventmachine'
-=begin
-EM.run do
-  EM.add_timer(5) do
-    puts "puts"
-    EM.stop
-  end
-  sleep 10
-  puts "puts s"
-end
 require 'thread'
 
 Thread.new do
@@ -19,8 +9,8 @@ loop do
   puts "main"
 end
 t.join
-=end
 
+=begin
 require 'fiber'
 
 Fiber.new do
@@ -32,3 +22,4 @@ end.resume
 loop do
   puts "main"
 end
+=end

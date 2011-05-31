@@ -1,0 +1,21 @@
+
+<h3>IO summary(contd..)</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+      # sudo code for IO Multiplexing
+      # using select/poll, epoll
+      # Not even close but...
+      mark_fds_as_non_block
+      register_fds_to_monitor_with_kernel
+      loop do
+        # return the files that are ready for IO or block until timeout.
+        fds_ready_list = wait_for_io_events(registered fds, timeout)
+        fds_ready_list.each do |fd|
+          # sets state of fd to unready once read/wrote
+          # For epoll depends on Edge-Triggred or Level Triggred.
+          do_io 
+        end
+        # do some processing, calculate value of pi
+        # Again monitor for further IO events on fds
+      end
+  ]]></script>
+<p>Loop for monitoring further activity on fds until closed</p>

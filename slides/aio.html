@@ -1,4 +1,1 @@
 <h3>Asynchronous IO</h3>
-<p>Until now we have been told by the kernel about the readiness of the fd. After that we have to make a read/write call on the fd to do IO</p>
-<p> IO operation is synchronous to thread of execution.</p>
-<p>We register a call back with kernel and kernel will call it when data is ready in its buffers with data as argument or a signal is sent which can be handled using custom handler.</p>
