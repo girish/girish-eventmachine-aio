@@ -9,7 +9,7 @@ end
 
 loop { puts "main" }
 
-# ruby thread_example.rb | grep main | wc -l will be > 0
+# ruby thread_example.rb | grep main # will print main many times..
 
 require 'fiber'
 
@@ -19,7 +19,8 @@ end.resume
 
 loop { puts "main"}
 
-# ruby fiber_example.rb | grep main | wc -l will be = 0
+# ruby fiber_example.rb | grep main # will not print main
   ]]></script>
+
 <p>Fibers are manually scheduled, but threads are scheduled by ruby VM</p>
 

@@ -7,5 +7,6 @@
   open file description, and whenever an I/O operation that makes the file
   descriptor ready is performed kernel add it to the epoll fd.
 </li>
-<li>So, it returns only the fds that are ready for IO, epoll is much much faster than select/poll. Scales well on large no fds.</li>
+<li>It returns only the fds that are ready for IO, so epoll is much much faster than select/poll. Scales well on large no of fds.</li>
+
 </ul>

@@ -1,0 +1,8 @@
+
+<h3>IO Summary</h3>
+<ul>
+<li>Non Blocking IO we receive the state/event changes on fds asynchronously. But the I/O operations are handled synchronously</li>
+<li>With Epoll we can monitor large no of fds(I mean sockets and other stream fds on which less activity happens) for IO and do the processing in single thread.</li>
+<li>This means we can keep the connection alive(ie need not close socket fds) and keep adding as many as possible.</li>
+<li>Perfect for IO bound processes.</li>
+</ul>

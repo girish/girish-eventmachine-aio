@@ -11,5 +11,7 @@
   f.resume # prints 200
   f.resume(300) # prints Got 300
   f = Fiber.new{ x = 200 ;  Fiber.yield(Fiber.current) }.resume
+  x = f.resume("return me") 
+  puts x # prints "return me"
   ]]></script>
 
