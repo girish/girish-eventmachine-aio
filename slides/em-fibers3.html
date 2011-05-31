@@ -1,0 +1,13 @@
+
+<p>Wrap in a fiber.</p>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+ 
+EventMachine.run do
+  Fiber.new{
+    http = EventMachine::HttpRequest.new(url).get :timeout => 10
+    parse(http.response)
+  }.resume
+end
+ ]]></script>
+
+<p>Now we can stop it whenever we want</p>

@@ -1,0 +1,19 @@
+<h3>Callbacks.. Callbacks.. Callbacks..</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+  EM.run do
+    http = HTTPRequest.new("something.html")
+    http.callback { |response|
+      rss_feed_url = parse(response)
+      feed = HTTPRequest.new("rss_feed_url")
+      feed.callback { |response|
+        email_of_author = parse(feed)
+          e = SendEmail.new(email_of_author)
+          e.callback {
+            puts "email sent"
+          }
+        end
+      }
+    }
+  end 
+  ]]></script>
+

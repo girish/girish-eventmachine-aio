@@ -1,0 +1,8 @@
+<h3>Nice if we could do..</h3>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+EventMachine.run do
+  http = EventMachine::HttpRequest.new(url).get :timeout => 10
+  parse(http.response)
+end
+ ]]></script>
+

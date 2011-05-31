@@ -1,0 +1,13 @@
+
+<p>Parse the response. We know that the arguments of resume are passed to yield</p>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+ 
+EventMachine.run do
+  Fiber.new{
+    http = EventMachine::HttpRequest.new(url).get :timeout => 10
+    http.callback { Fiber.current.resume(http) }
+    parse(Fiber.yield.reponse)
+  }.resume
+end
+ ]]></script>
+

@@ -1,0 +1,23 @@
+<p><a href="https://github.com/igrigorik/em-synchrony">EM.synchrony</a></p>
+<script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+EventMachine.synchrony do
+  page = EventMachine::HttpRequest.new("http://www.google.com").get
+  p "No callbacks! Fetched page: #{page}"
+  EventMachine.stop
+end
+
+# Fiber pool for multi requests.
+EM.synchrony do
+  # perform 4 http requests in parallel, and collect responses
+  multi = EventMachine::Synchrony::Multi.new
+  multi.add :page1, EventMachine::HttpRequest.new("http://service.com/page1").aget
+  multi.add :page2, EventMachine::HttpRequest.new("http://service.com/page2").aget
+  multi.add :page3, EventMachine::HttpRequest.new("http://service.com/page3").aget
+  multi.add :page4, EventMachine::HttpRequest.new("http://service.com/page4").aget
+  data = multi.perform.responses[:callback].values
+ 
+  EventMachine.stop
+end
+  ]]></script>
+<p>
+
