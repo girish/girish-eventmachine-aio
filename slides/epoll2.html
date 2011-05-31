@@ -1,8 +1,8 @@
 
 <h3>Epoll</h3>
 <ul>
-<li>First an alias(epoll fd) for all files needed to monitor is created using epoll_create.</li>
-<li>Then fds for monitoring are associated with this alias using epoll_ctl along with event on fd to monitor.
+<li>First a descriptor (say epoll_fd) is created for all files needed to monitor using epoll_create.</li>
+<li>Then fds for monitoring are associated with this discriptor using epoll_ctl along with event on fd to monitor.
    The kernel records this fact in a list associated with the underlying
   open file description, and whenever an I/O operation that makes the file
   descriptor ready is performed kernel add it to the epoll fd.

@@ -7,6 +7,6 @@
   int select(int nfds, fd_set *readfds, fd_set *writefds, 
   fd_set *exceptfds, struct timeval *timeout);
   ]]></script>
-<p>After select/poll call kerenel loops through the fd array passed, to check the state changes and set a bit if occurred.</p>
+<p>After select/poll call kernel loops through the fd array passed, to check the state changes and set a bit if occurred.</p>
 <p>When it returns, we have to loop through all the fds and check for set using FD_ISSET </p>
 <p>Inefficient for large no of fds.</p>

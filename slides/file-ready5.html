@@ -1,0 +1,8 @@
+
+<h3>When is a fd ready?</h3>
+<p>As seen, IO Multiplexing depends on kernel informing about readiness to process.  </p>
+<p>Readiness depends on type of file</p>
+<p>sockets are ready when input/output avialable.</p>
+<p>sockets are ready when an incoming connection established on listening socket 
+.</p>
+<p>pipe's read end is ready if atleast one byte is there to read irrespective of length requested.</p>
