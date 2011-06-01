@@ -8,7 +8,6 @@ end
 loop do
   puts "main"
 end
-t.join
 
 =begin
 require 'fiber'
