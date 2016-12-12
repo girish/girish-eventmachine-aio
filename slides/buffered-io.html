@@ -1,4 +1,4 @@
-<p>As a side note: IO is buffered in kernel for efficiency. Read/Write calls copies data from/to kernel buffer.</p>
+<p>IO is buffered in kernel for efficiency. Read/Write calls copies data from/to kernel buffer.</p>
 <pre>
 User Space                      Kernel Space
 ----------                   |    ----------        ----------
@@ -14,4 +14,4 @@ User Space                      Kernel Space
 -----------                  |    ----------        ----------
 </pre>
 
-<p>This means no guarantee that contents are written to disk every time you write, Yes true. Call excplicitly fsync to do so.</p>
+<p>This means no guarantee that contents are written to disk every time you write. Yes true. Need yo call excplicitly fsync to do so.</p>

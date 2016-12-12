@@ -5,7 +5,7 @@ not by itself cause the thread of execution
 requesting the I/O to be blocked from further use
 of the processor</p>
 <p>
-read(fd, len)/write(fd, len) returns
+read(fd, len) / write(fd, len) returns
 EWOULDBLOCK if it cannot read/write any data, other wise the
 number of bytes read.
 </p>

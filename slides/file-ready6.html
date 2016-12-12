@@ -3,7 +3,6 @@
 <p>As seen, IO Multiplexing depends on kernel informing about readiness to process.  </p>
 <p>Readiness depends on type of file</p>
 <p>sockets are ready when input/output avialable.</p>
-<p>sockets are ready when an incoming connection established on listening socket 
-.</p>
+<p>sockets are ready when an incoming connection established on listening socket.</p>
 <p>pipe's read end is ready if atleast one byte is there to read irrespective of length requested.</p>
-<p>Disk files are always marked ready. So these don't work.</p>
+<p>Disk files are always marked ready. So these don't work as expected.</p>
